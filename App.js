@@ -1,21 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
+// imports
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import AppNavigator from './src/navigation/Index';
 
-export default function App() {
+// import context
+import {Provider as PostProvider} from './src/context/PostContext';
+
+export default function App(){
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <PostProvider>
+      <AppNavigator/>
+    </PostProvider>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
